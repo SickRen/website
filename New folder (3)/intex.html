@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Streaming Website</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url("images/background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.7); /* Slight overlay on the top bar */
+    }
+
+    /* Logo */
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li:hover {
+      color: #ffd700; /* Gold color on hover */
+    }
+
+    /* Search Bar */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .search-bar input {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+    }
+
+    .search-bar button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      background-color: #ffd700;
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-bar button:hover {
+      background-color: #e6c200;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      margin-top: 5rem; /* space below the header */
+      padding: 4rem 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      background-color: #ffd700;
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta:hover {
+      background-color: #e6c200;
+    }
+
+    /* Content Section */
+    .content {
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .content h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .movies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .movie-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .movie-card:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .search-bar {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding: 2rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="logo">MyStream</div>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Movies</li>
+        <li>TV Shows</li>
+        <li>My List</li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search..." />
+      <button onclick="searchMovies()">Search</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to My Streaming Website</h1>
+    <p>Watch your favorite shows and movies in one place.</p>
+    <button class="cta">Get Started</button>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content">
+    <h2>Popular Now</h2>
+    <div class="movies-grid">
+      <div class="movie-card">Movie 1</div>
+      <div class="movie-card">Movie 2</div>
+      <div class="movie-card">Movie 3</div>
+      <div class="movie-card">Movie 4</div>
+      <div class="movie-card">Movie 5</div>
+      <div class="movie-card">Movie 6</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Streaming Website</p>
+  </footer>
+
+  <!-- JavaScript (Optional) -->
+  <script>
+    function searchMovies() {
+      const query = document.getElementById('searchInput').value;
+      if (query.trim() !== "") {
+        alert("Searching for: " + query);
+        // Implement actual search functionality here, e.g., redirect to a search results page
+      } else {
+        alert("Please enter a search term.");
+      }
+    }
+  </script>
+</body>
+</html>
